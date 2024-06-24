@@ -4,10 +4,25 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.*;
+
 @Service
 public class EmployeeService {
-    private static final int MAX_EMPLOYEES = 10; // Примерное значение
+    private static final int MAX_EMPLOYEES = 10;
     private final Map<String, Employee> employeeMap = new HashMap<>();
+
+    public EmployeeService() {
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee("Снежная", "Жанна"));
+        employees.add(new Employee("Смирнов", "Сергей"));
+        employees.add(new Employee("Иванов", "Иван"));
+        employees.add(new Employee("Молев", "Дима"));
+        employees.add(new Employee("Мусаев", "Мухаммед Ибрагим оглы"));
+        employees.add(new Employee("Снежков", "Алексей"));
+        employees.add(new Employee("Кабаева", "Алина"));
+        employees.add(new Employee("Медведев", "Дима"));
+        employees.add(new Employee("Пушкин", "Александр"));
+        employees.add(new Employee("Святая", "Вероника"));
+    }
 
     public void addEmployee(String firstName, String lastName) {
         if (employeeMap.size() >= MAX_EMPLOYEES) {
@@ -38,7 +53,7 @@ public class EmployeeService {
     }
 
     public List<Employee> getAllEmployees() {
-        return null;
+        return new ArrayList<>(employeeMap.values());
     }
 
 
@@ -59,8 +74,6 @@ public class EmployeeService {
             super(message);
         }
     }
-
-
 }
 
 

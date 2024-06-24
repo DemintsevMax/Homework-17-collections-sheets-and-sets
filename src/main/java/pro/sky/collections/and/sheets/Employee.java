@@ -1,15 +1,27 @@
 package pro.sky.collections.and.sheets;
 
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.Objects;
 
+@RestController
+@RequestMapping
 public class Employee {
+
+
     private String firstName;
     private String lastName;
+
 
     public Employee(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+    public Employee() {
+    }
+
 
     public String getFirstName() {
         return firstName;
