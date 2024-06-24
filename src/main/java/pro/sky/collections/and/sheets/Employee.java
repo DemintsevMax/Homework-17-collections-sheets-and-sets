@@ -1,10 +1,7 @@
 package pro.sky.collections.and.sheets;
 
-import org.springframework.web.bind.annotation.RestController;
-
 import java.util.Objects;
 
-@RestController
 public class Employee {
     private String firstName;
     private String lastName;
@@ -51,6 +48,4 @@ public class Employee {
                 '}';
     }
 
-    // Конструктор, геттеры, hashCode, equals, toString
 }
-
