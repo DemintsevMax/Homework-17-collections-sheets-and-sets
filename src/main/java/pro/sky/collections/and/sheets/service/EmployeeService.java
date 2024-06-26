@@ -62,8 +62,17 @@ public class EmployeeService {
         return null;
     }
 
-    public boolean removeEmployee(String firstName, String lastName) {
-        return false;
+    public String removeEmployee(String firstName, String lastName) {
+        Employee employee = new Employee(firstName, lastName);
+        try {
+            if (employees.remove(employee)) {
+                return "Сотрудник удален !";
+            }
+            throw new EmployeeNotFoundException(firstName + " " + lastName + "Не найден, введен неизвестный сотрудник");
+        } catch (EmployeeNotFoundException e) {
+            System.out.println("Сотрудник не найден!");
+        }
+        return null;
     }
 
     public List<Employee> getAllEmployees() {
